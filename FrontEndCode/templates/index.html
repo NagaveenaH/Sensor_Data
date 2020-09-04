@@ -1,0 +1,284 @@
+{% load static %}
+{%  static "images" as baseUrl %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML dynamic table using JavaScript</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['TimeStamp', 'readings'],
+          ['2004',  90],
+          ['2005',  70],
+          ['2006',  60],
+          ['2007',  10]
+        ]);
+
+        var options = {
+          title: 'Sensor Readings',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <meta http-equiv=”refresh” content=”30″/> 
+     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Css menu style -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+body {margin:0;}
+
+
+.navbar {
+  overflow: hidden;
+  background-color:rgb(207, 29, 29);
+  position: inherit;
+  padding:5px 5px 0px 0px;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+.paddingImg
+{
+padding:0px 0px 0px 4px;
+}
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+.alignRight{
+  padding-top: 5px;
+  padding-right: 5px;
+  float:right;
+}
+.alignLeft{
+  padding-top: 5px;
+  padding-right: 5px;
+  float:left;
+}
+.contentDiv {
+  background-color:white;
+  text-align: justify;
+  padding-left: 40px;
+}
+.spaceReq
+{
+  text-indent: 10em;
+}
+.dropbtn {
+  background-color:  rgb(207, 29, 29);
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border:1px black;
+  border-radius: 4px;
+  -webkit-box-shadow:inset 1px 4px 8px  rgb(233, 121, 121),inset -1px -8px 5px rgb(207, 29, 29),1px 2px 1px black;
+  -moz-box-shadow:inset 1px 4px 8px  rgb(233, 121, 121),inset -1px -8px 5px rgb(207, 29, 29),1px 2px 1px black;
+  box-shadow:inset 1px 4px 8px  rgb(233, 121, 121),inset -1px -px 5px rgb(207, 29, 29),1px 2px 1px black;
+  text-shadow: 1px 1px whitesmoke;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: rgb(233, 121, 121);}
+</style>
+<style>
+  .buttonback {
+    height:50px;
+    width:150px;
+    display: inline-block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: black;/*Button Color*/
+    color:white;/*Use Darker Color*/
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.29);
+    border-bottom: solid 3px rgb(196, 169, 169);
+    border-radius: 8px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+}
+
+.buttonback:active   {
+    -ms-transform: translateY(4px);
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+    box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.459);
+    border-bottom: none;
+}
+  }
+</style>
+<style>
+  .table-fixed thead {
+    width: 100%;
+  }
+  .table-fixed tbody {
+    height: 230px;
+    overflow-y: auto;
+    width: 100%;
+  }
+  .table-fixed thead, .table-fixed tbody, .table-fixed tr, .table-fixed td, .table-fixed th {
+    display: block;
+  }
+  .table-fixed tbody td, .table-fixed thead > tr> th {
+    float: left;
+    border-bottom-width: 0;
+  }
+
+</style>
+
+<script language="javascript">
+  setInterval(function(){
+     window.location.reload(1);
+  }, 30000);
+  </script> 
+</head>
+<body>
+    <div class="navbar">
+        <img class ="paddingImg" src="{% static 'images\AtriaPower.jpg' %}" alt="image not found" width="100" height="80"/>
+    </div>
+    <div class="container">
+      <div class="row">
+<div id="myform" align ="center">
+<h2><strong>Select below option to display Sensor Data</strong></h2>
+<form action="getSensorType" method="post">
+  {% csrf_token %}
+<div class="dropdown" >
+       <select class ="dropbtn" name="sensortype" id="sensortype">
+      <option>Choose Sensor Type</option>
+      <div class="dropdown-content">
+      <option value="temp">Temperature Sensor</option>
+      <option value="humidity">Humidity Sensor</option>
+      <option value="pressure">Pressure sensor</option>
+      </div>
+      </select> 
+      <!-- <input type="text" value="" name="sensortype" placeholder="Enter Sensor Type"> -->
+      <br>
+      </div>
+      <!-- <div class="dropdown">
+        <button class="dropbtn"><span style='font-size:20px; color: white;'> <strong>Choose Sensor Type</strong></span><span 'font-size:20px; color: white;'> &#10549;</span></button>
+        <div class="dropdown-content">
+          <a href="#">Temperature</a>
+          <a href="#">Humidity</a>
+          <a href="#">Add</a>
+        </div>
+      </div> -->
+    <br>   
+    <br>
+    <input type="submit" value="Submit" name="Get Sensor Values" class="buttonback" style="font-size: 20px; font-style: oblique; text-align: center;">
+  </form>
+</div>
+      </div>
+  <!-- <h1>{% block content %}
+    Result: {{result}}
+    {% endblock %}</h1> -->
+    <div class="row">
+      <div class="col-sm-6">
+    <br>
+    {% if result == none %}
+  <h1>No Data to display</h1>
+  {% endif %}
+  <br>
+  <br>
+<table class="table table-fixed table-striped" id="sensortable" name="sensortable">
+  <thead>
+    <tr class="info">
+      <th class="col-xs-4" style="font-size:20px; color: rgb(199, 53, 53); font-style: normal; font-weight: bold;">Sensor Reading</th>
+      <th class="col-xs-4" style="font-size:20px; color: rgb(199, 53, 53); font-style: normal; font-weight: bold;">TimeStamp</th>
+      <th class="col-xs-4" style="font-size:20px; color: rgb(199, 53, 53); font-style: normal; font-weight: bold;">Sensor Type</th>
+    </tr>
+  </thead>
+  <tbody>
+      {% for i in result %}
+        <tr  class="success">
+           {% for key,value in i.items %}                       
+            <td class="col-xs-4" style="font-size:12px; color: black; font-style: normal; font-weight: normal;">{{value}}</td>           
+            {% endfor %}
+          </tr>
+          {% endfor %}
+          </tbody>
+</table>
+</div>
+<div class="col-sm-6">
+  <div id="curve_chart" style="width: 900px; height: 500px"></div>
+  </div>
+</div>
+<div class="row">
+  <label>Minimum Value</label>
+  <h2>
+    {{Min}}
+  </h2>
+</div>
+<div class="row">
+<label>
+Maximum Value
+  </label>
+  <h2>
+    {{Max}}
+  </h2>
+  </div>
+  <div class="row">
+    <label>
+    Maximum Value
+      </label>
+      <h2>
+        {{Mean}}
+      </h2>
+      </div>
+</div>
+</div>
+</body>
+</html>
+
+
+
